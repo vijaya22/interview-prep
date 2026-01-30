@@ -6,23 +6,159 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="Interview preparation questions and answers">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/style.min.css" title="docsify-darklight-theme" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <style>
+    :root {
+      --base-font-family: "Roboto", sans-serif;
+      --base-font-size: 15px;
+      --base-font-weight: 400;
+      --base-line-height: 1.75;
+      --base-color: #374151;
+      --base-background-color: #f5f5f5;
+
+      --sidebar-width: 250px;
+      --sidebar-background: #ebebeb;
+      --sidebar-border-color: transparent;
+      --sidebar-border-width: 0;
+      --sidebar-nav-link-color: #555;
+      --sidebar-nav-link-color--active: #111;
+      --sidebar-nav-link-font-weight--active: 500;
+      --sidebar-nav-link-border-color--active: #111;
+      --sidebar-nav-link-border-width--active: 0 0 0 2px;
+      --sidebar-nav-link-text-decoration: none;
+      --sidebar-nav-link-text-decoration--active: none;
+      --sidebar-nav-link-text-decoration--hover: none;
+      --sidebar-name-font-size: 1.15rem;
+      --sidebar-name-font-weight: 500;
+      --sidebar-name-color: #111;
+
+      --content-max-width: 780px;
+
+      --heading-font-weight: 500;
+      --heading-color: #111;
+      --heading-h1-font-size: 1.7rem;
+      --heading-h1-font-weight: 500;
+      --heading-h2-font-size: 1.3rem;
+      --heading-h2-border-color: #ddd;
+      --heading-h2-border-width: 0 0 1px 0;
+      --heading-h2-padding: 0 0 0.4rem 0;
+      --heading-h3-font-size: 1.1rem;
+
+      --link-color: #374151;
+      --link-text-decoration: underline;
+      --link-text-decoration-color: #bbb;
+      --link-color--hover: #111;
+
+      --code-font-family: "Roboto Mono", monospace;
+      --code-font-size: 0.84em;
+      --code-inline-background: #e8e8e8;
+      --code-inline-color: #c7254e;
+      --code-inline-padding: 0.15em 0.4em;
+      --code-inline-border-radius: 3px;
+      --code-block-background: #e8e8e8;
+      --code-block-padding: 1.2em 1.4em;
+      --code-block-border-radius: 6px;
+
+      --blockquote-border-color: #ccc;
+      --blockquote-border-width: 0 0 0 3px;
+      --blockquote-background: #eee;
+      --blockquote-color: #555;
+
+      --copycode-background: transparent;
+      --copycode-color: #999;
+
+      --search-input-border-color: #ddd;
+      --search-input-border-width: 1px;
+      --search-input-border-radius: 4px;
+      --search-input-placeholder-color: #aaa;
+      --search-input-background: #e8e8e8;
+      --search-input-color: #333;
+
+      --notice-tip-border-color: #999;
+    }
+
+    /* Remove bullet points from sidebar */
+    .sidebar-nav ul,
+    .sidebar-nav ul li,
+    .sidebar-nav ul ul,
+    .sidebar ul,
+    .sidebar ul li {
+      list-style: none !important;
+      list-style-type: none !important;
+    }
+    .sidebar-nav ul {
+      margin: 0;
+      padding: 0;
+    }
+    .sidebar-nav ul ul {
+      margin-left: 1em;
+      padding-left: 0;
+    }
+
+    /* Remove bullets from main content lists too */
+    .markdown-section ul {
+      list-style: disc;
+    }
+
+    /* Sidebar link styling */
+    .sidebar-nav li > a {
+      font-size: 0.88rem;
+      padding: 0.25em 0;
+      display: block;
+    }
+
+    /* Category headings in sidebar */
+    .sidebar-nav li > p {
+      font-weight: 500;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin: 1.4em 0 0.3em;
+    }
+
+    /* Clean content area */
+    .markdown-section {
+      padding: 2rem 2.5rem;
+    }
+
+    /* Subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #aaa;
+    }
+
+    /* Search box */
+    .search input {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: 'Interview Prep',
-      repo: 'https://github.com/vijaya22/interview-prep',
+      nameLink: '/',
       loadSidebar: true,
       subMaxLevel: 2,
+      auto2top: true,
       search: {
-        placeholder: 'Search',
+        placeholder: 'Search...',
         noData: 'No results',
         depth: 6
-      },
-      darklightTheme: {
-        defaultTheme: 'dark'
       },
       copyCode: {
         buttonText: 'Copy',
@@ -35,7 +171,6 @@
   <!-- Plugins -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/index.min.js" type="text/javascript"></script>
   <!-- Syntax highlighting -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
