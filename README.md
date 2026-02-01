@@ -18,3 +18,7 @@ Questions and answers commonly asked in interviews.
 - [Node.js](nodejs/interview-questions)
 - [NestJS](nestjs/interview-questions)
 - [Next.js](nextjs/interview-questions)
+
+### Actually Asked
+- [JavaScript](javascript/real-company-questions)
+- [React.js](react/reactjs/real-company-questions)
